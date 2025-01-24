@@ -1,0 +1,59 @@
+----------- to use fs -----------
+
+const fs=require("fs");
+
+
+---------- to create a file inside the current folder ------------
+
+Synchronous--------
+
+fs.writeFileSync("./filename","hello world");
+
+
+asynchronous--------
+
+fs.writeFile("./filename","hello world",(err) =>{});
+
+
+
+------------to read file data------------
+
+-------synchronous---------
+
+const result = fs.readFileSync("./filename","utf-8");
+console.log(result);
+
+
+Asynchronous-------------
+
+fs.readFile("./filename","utf-8",(err, result) =>
+{
+     if (err)  {
+              console.log("Error",err);
+              }
+      else   {
+              console.log(result);
+             }
+             
+
+
+-----------to append (update) file------------
+
+
+------------synchronous--------
+
+fs.appendFileSync("./filename",'Hello world');
+
+
+
+
+--------to copy data of one file to another file---------
+
+fs.cpSync("./existance filename","destination filename");
+
+
+
+--------to delete file------------
+
+fs.unlinkSync("./filename");
+
